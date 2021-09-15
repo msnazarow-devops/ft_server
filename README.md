@@ -1,5 +1,5 @@
 # ft_server
-wordpress + nginx + mariadb
+wordpress + nginx + mariadb + phpMyAdmin
 
 If ssl keys are expired, you have to generate your own. To do this run:
 
