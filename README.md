@@ -10,13 +10,9 @@ try localhost in browser, service nginx stop, service apache stop or smth like t
 
 Usage: 
 
-➜  ~ git clone 
+➜  ~ git clone https://github.com/msnazarow/ft_server
 
-➜  ~ cd ft_server
-
-➜  ~ docker build -t ft_server .
-
-➜  ~ docker build -t ft_server .
+➜  ~ cd ft_server 
 
 ➜  ~ docker build -t ft_server .
 
