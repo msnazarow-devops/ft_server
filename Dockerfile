@@ -12,14 +12,12 @@
 
 FROM debian:buster
 EXPOSE 80 443
-RUN apt-get -y update && apt-get -y upgrade
-RUN apt-get install -y nginx curl supervisor wget mariadb-server mariadb-client php-fpm
-RUN apt-get install -y php-common php-mbstring php-xmlrpc php-soap php-gd php-intl php-mysql php-cli php-ldap php-zip php-curl
+RUN apt-get -y update && \
+    apt-get install -y nginx curl supervisor wget mariadb-server mariadb-client php-fpm && \
+    apt-get install -y php-common php-mbstring php-xmlrpc php-soap php-gd php-intl php-mysql php-cli php-ldap php-zip php-curl
 WORKDIR /var/www/
 RUN wget https://files.phpmyadmin.net/phpMyAdmin/5.0.2/phpMyAdmin-5.0.2-all-languages.tar.gz https://wordpress.org/latest.tar.gz
 RUN tar -xvzf latest.tar.gz && tar -xvzf phpMyAdmin-5.0.2-all-languages.tar.gz && mv phpMyAdmin-5.0.2-all-languages wordpress/phpMyAdmin
-RUN apt-get -y install nano
-RUN apt-get -y install certbot python-certbot-nginx
 COPY srcs/ .
 RUN chmod +x *.sh
 RUN mv nginx-selfsigned.key /etc/ssl/private/nginx-selfsigned.key && \
